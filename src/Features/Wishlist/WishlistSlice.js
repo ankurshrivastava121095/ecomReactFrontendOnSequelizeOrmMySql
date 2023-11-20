@@ -47,17 +47,6 @@ export const getWishlistsByUserId = createAsyncThunk(
     }
 );
 
-// export const deleteWishlist = createAsyncThunk(
-//     "wishlists/deleteWishlist",
-//     async (wishlist, { rejectWithValue }) => {
-//         try {
-//             const response = await axios.put(`${baseURL}/deleteProductFromWishlist/${wishlist.id}`, wishlist);
-//             return response.data;
-//         } catch (error) {
-//             return rejectWithValue(error.response.data.message);
-//         }
-//     }
-// );
 export const deleteWishlist = createAsyncThunk(
     "wishlists/deleteWishlist",
     async (wishlistId, { rejectWithValue }) => {
@@ -120,19 +109,6 @@ const wishlistsSlice = createSlice({
             });
   
         // deleteWishlist reducers
-        // builder
-        //     .addCase(deleteWishlist.pending, (state) => {
-        //         state.responseStatus = "pending";
-        //     })
-        //     .addCase(deleteWishlist.fulfilled, (state, action) => {
-        //         state.responseStatus = "success";
-        //         state.responseMessage = "Product deleted successfully";
-        //     })
-        //     .addCase(deleteWishlist.rejected, (state, action) => {
-        //         state.responseStatus = "rejected";
-        //         state.responseMessage = action.payload;
-        //     });
-                // delete reducers
         builder
             .addCase(deleteWishlist.pending, (state) => {
                 state.responseStatus = "pending";
